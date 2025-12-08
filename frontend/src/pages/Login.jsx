@@ -9,18 +9,18 @@ const Login = () => {
 
   const handleDiscordLogin = async () => {
     setIsLoading(true)
-    
+
     try {
       // Check if we have Discord client ID configured
       if (!import.meta.env.VITE_DISCORD_CLIENT_ID) {
         // Development fallback - simulate successful login
         console.warn('Discord client ID not configured, using development mode')
-        
+
         setTimeout(() => {
           console.log('Simulated login successful')
           window.location.reload() // This will trigger AuthContext to load user data
         }, 2000)
-        
+
         return
       }
 
@@ -43,7 +43,7 @@ const Login = () => {
             <div className="w-20 h-20 bg-gradient-to-br from-purple-600 via-blue-600 to-cyan-600 rounded-3xl flex items-center justify-center mx-auto mb-6 shadow-2xl">
               <span className="text-white font-bold text-3xl">🛡️</span>
             </div>
-            
+
             <h1 className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2">
               Welcome to CommunityClara
             </h1>
@@ -69,7 +69,7 @@ const Login = () => {
           </div>
 
           {/* Login Button */}
-          <GoogleSignIn 
+          <GoogleSignIn
             onSuccess={(userData) => {
               console.log('✅ Login successful:', userData)
               // AuthContext will handle the redirect
@@ -80,47 +80,7 @@ const Login = () => {
           />
 
 
-          {/* Security Notice */}
-          <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg">
-            <div className="flex items-start space-x-2">
-              <span className="text-blue-500 text-lg flex-shrink-0">🔒</span>
-              <div className="text-sm text-blue-800 dark:text-blue-200">
-                <div className="font-medium mb-1">Secure Authentication</div>
-                <div>We only access your basic Discord profile and server list. No messages or private data are stored.</div>
-              </div>
-            </div>
-          </div>
 
-          {/* Development Notice */}
-          {!import.meta.env.VITE_DISCORD_CLIENT_ID && (
-            <div className="mt-4 p-3 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg">
-              <div className="text-sm text-yellow-800 dark:text-yellow-200">
-                <div className="font-medium">Development Mode</div>
-                <div>Discord OAuth not configured - using mock authentication</div>
-              </div>
-            </div>
-          )}
-
-          {/* Help Links */}
-          <div className="mt-6 text-center space-y-2">
-            <a 
-              href="https://docs.safespace-ai.com/getting-started" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-sm text-gray-500 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
-            >
-              📖 Getting Started Guide
-            </a>
-            <br />
-            <a 
-              href="https://discord.gg/safespace-ai" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-sm text-gray-500 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
-            >
-              💬 Need Help? Join Our Discord
-            </a>
-          </div>
         </div>
 
         {/* Additional Info */}
