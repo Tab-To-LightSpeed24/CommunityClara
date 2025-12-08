@@ -132,7 +132,7 @@ const Home = ({ setCurrentPage }) => {
               className="flex flex-col sm:flex-row gap-4 justify-center mb-20"
             >
               <a
-                href="https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=YOUR_PERMISSIONS&integration_type=0&scope=bot+applications.commands"
+                href="https://discord.com/oauth2/authorize?client_id=1399461751552213123&permissions=1099646233670&integration_type=0&scope=bot+applications.commands"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary px-8 py-4 text-lg shadow-xl shadow-blue-600/20 hover:shadow-blue-600/30 transform hover:-translate-y-1 transition-all"
