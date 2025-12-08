@@ -1,0 +1,62 @@
+# Virtual Environments (MOST IMPORTANT)
+venv/
+env/
+.venv/
+.env/
+
+# Environment variables
+.env
+.env.local
+.env.production
+.env.development
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.pyc
+*.pyo
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Database
+*.db
+*.sqlite3
+*.sqlite
+
+# Logs
+logs/
+*.log
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Model files (large files)
+models/
+*.h5
+*.pkl
+*.model
+
+# Sensitive files
+*.key
+*.pem
+safespace_*.log
+
+# Build outputs
+dist/
+build/
+.next/
+.nuxt/.history/ 

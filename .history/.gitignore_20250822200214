@@ -1,0 +1,43 @@
+# Environment variables 
+.env 
+.env.local 
+.env.production 
+ 
+# Dependencies 
+node_modules/ 
+__pycache__/ 
+*.pyc 
+*.pyo 
+*.egg-info/ 
+ 
+# Database 
+*.db 
+*.sqlite3 
+ 
+# Logs 
+logs/ 
+*.log 
+ 
+# Build outputs 
+dist/ 
+build/ 
+ 
+# IDE files 
+.vscode/ 
+.idea/ 
+*.swp 
+*.swo 
+ 
+# OS files 
+.DS_Store 
+Thumbs.db 
+ 
+# Model files 
+models/ 
+*.h5 
+*.pkl 
+ 
+# Sensitive files 
+*.key 
+*.pem 
+safespace_*.log 

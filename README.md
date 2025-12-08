@@ -1,0 +1,91 @@
+# 🛡️ CommunityClara AI
+
+**Privacy-Preserving Discord Moderation with AI-Powered Content Analysis**
+
+[![Discord Bot](https://img.shields.io/badge/Discord-Bot-7289da?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=1099511982080&integration_type=0&scope=bot)
+[![Python](https://img.shields.io/badge/Python-3.9+-3776ab?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![React](https://img.shields.io/badge/React-18+-61dafb?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org)
+[![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+
+## 🌟 Features
+
+### 🤖 AI-Powered Content Moderation
+- **OpenAI Moderation API Integration** - Real-time toxicity detection
+- **HuggingFace Transformers** - Advanced NLP analysis
+- **Multi-Category Detection**: NSFW, Toxicity, Harassment, Spam, Hate Speech, Threats, Self-Harm
+- **Configurable Sensitivity** - Adjust thresholds per server
+
+### 🔒 Privacy-Preserving Architecture
+- **Local-First Processing** - Prioritizes local analysis where possible
+- **Threshold Auto-Adjustment** - Learn from community feedback
+- **Server-Specific Rules** - Adapts to server-specific communication patterns
+- **Anonymous Analytics** - Track trends without compromising privacy
+
+### ⚡ Real-Time Discord Integration
+- **3-Warning System** - Progressive enforcement
+- **Smart Spam Detection** - Pattern-based analysis
+- **Automated Actions**: Message deletion, timeouts, escalation
+- **Human Moderation Alerts** - For complex cases
+
+### 📊 Comprehensive Analytics Dashboard
+- **Real-Time Metrics** - Community health scoring (0-100%)
+- **Violation Trends** - Daily/weekly statistics
+- **False Positive Tracking** - Accuracy measurement
+- **Engagement Analytics** - Community activity monitoring
+
+
+## 📸 Screenshots
+
+### Landing Page
+The modern, responsive landing page showcasing SafeSpace AI's capabilities and features.
+
+![Landing Page](screenshots/landing-page.png)
+
+### Dashboard Overview
+Real-time analytics and server health monitoring with comprehensive violation tracking.
+
+![Dashboard](screenshots/dashboard.png)
+
+### Bot Configuration Settings
+Intuitive configuration interface for AI moderation thresholds and automated actions.
+
+![Settings](screenshots/settings.png)
+
+### User Profile Management
+User preferences and notification settings for personalized experience.
+
+![Profile](screenshots/profile.png)
+
+### Live Bot Testing - Content Moderation
+Demonstration of the bot detecting and handling toxic content in real-time.
+
+![Bot Content Moderation Test](screenshots/bot-test-screenshot.png)
+
+### Live Bot Testing - Spam Detection
+Advanced spam detection system identifying and removing repetitive content.
+
+![Bot Spam Detection Test](screenshots/bot-test-spam-screenshot.png)
+
+---
+
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Python 3.9+
+- Node.js 18+
+- Discord Bot Token
+- OpenAI API Key
+
+### 1. Clone & Setup
+```bash
+git clone https://github.com/yourusername/CommunityClara.git
+cd CommunityClara
+
+# Backend setup
+cd backend
+pip install -r requirements.txt
+
+# Frontend setup
+cd ../frontend
+npm install
