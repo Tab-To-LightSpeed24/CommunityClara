@@ -44,6 +44,20 @@ async def lifespan(app: FastAPI):
                 
                 # Start bot in background task
                 bot_task = asyncio.create_task(bot_instance.start(config.DISCORD_BOT_TOKEN))
+                
+                # Add callback to log if the bot crashes
+                def handle_bot_exit(task):
+                    try:
+                        task.result()
+                    except asyncio.CancelledError:
+                        logger.info("🤖 Bot task cancelled (shutdown)")
+                    except Exception as e:
+                        logger.error(f"❌ CRITICAL BOT CRASH: {e}")
+                        import traceback
+                        logger.error(traceback.format_exc())
+
+                bot_task.add_done_callback(handle_bot_exit)
+                
                 logger.info("🎉 Discord bot startup initiated")
                 
             except Exception as e:
