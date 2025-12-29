@@ -36,13 +36,21 @@
 
 ## 📸 Screenshots
 
-| Dashboard Overview | Bot Configuration |
-|:---:|:---:|
-| ![Dashboard](screenshots/dashboard.png) | ![Settings](screenshots/settings.png) |
+### 🖥️ Web Interface
 
-| Landing Page | Live Bot Action |
-|:---:|:---:|
-| ![Landing Page](screenshots/landing-page.png) | ![Bot Test](screenshots/bot-test-screenshot.png) |
+| Landing Page | Dashboard | Profile |
+|:---:|:---:|:---:|
+| ![Landing Page](screenshots/landing-page.png) | ![Dashboard](screenshots/dashboard.png) | ![Profile Page](screenshots/profile.png) |
+
+| Settings | Notifications | Contact Support |
+|:---:|:---:|:---:|
+| ![Settings](screenshots/settings.png) | ![Notifications](screenshots/notifications.png) | ![Contact Us](screenshots/contact-us.png) |
+
+### 🤖 Discord Bot Alerts
+
+| Toxicity Alert | Spam Alert | NSFW Violation |
+|:---:|:---:|:---:|
+| ![Toxicity Alert](screenshots/bot-test-screenshot.png) | ![Spam Alert](screenshots/bot-test-spam-screenshot.png) | ![NSFW Violation](screenshots/nsfw-violation.png) |
 
 ---
 
