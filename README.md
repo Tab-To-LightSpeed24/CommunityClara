@@ -42,7 +42,7 @@
 
 | Landing Page | Live Bot Action |
 |:---:|:---:|
-| ![Landing Page](<img width="1919" height="901" alt="image" src="https://github.com/user-attachments/assets/1c65b0d0-f633-49f9-9742-8bf3a83eae82" />) | ![Bot Test](screenshots/bot-test-screenshot.png) |
+| ![Landing Page](screenshots/landing-page.png) | ![Bot Test](screenshots/bot-test-screenshot.png) |
 
 ---
 
