@@ -102,7 +102,7 @@ app.add_middleware(
         "https://accounts.google.com",
         "https://www.googleapis.com",
         "https://gstatic.com" , # ADD THIS
-        "https://community-clara.vercel.app/"
+        "https://community-clara.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
