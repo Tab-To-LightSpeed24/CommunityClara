@@ -41,11 +41,11 @@ const Dashboard = () => {
   }, [serversData?.servers, selectedServerId])
 
   // Fetch dashboard data for selected server
-  const { 
-    data: dashboardData, 
-    isLoading: dashboardLoading, 
+  const {
+    data: dashboardData,
+    isLoading: dashboardLoading,
     error: dashboardError,
-    refetch: refetchDashboard 
+    refetch: refetchDashboard
   } = useQuery({
     queryKey: ['dashboard', selectedServerId],
     queryFn: async () => {
@@ -65,7 +65,7 @@ const Dashboard = () => {
   useEffect(() => {
     if (selectedServerId) {
       console.log('🔄 Dashboard: Server changed, refreshing data for:', selectedServerId)
-      
+
       // Invalidate all related queries
       queryClient.invalidateQueries(['dashboard', selectedServerId])
       queryClient.invalidateQueries(['server-stats', selectedServerId])
@@ -119,7 +119,7 @@ const Dashboard = () => {
   if (serversError) {
     return (
       <div className="min-h-[400px] flex items-center justify-center">
-        <ErrorMessage 
+        <ErrorMessage
           title="Unable to Load Servers"
           message={apiHelpers.formatError(serversError)}
           onRetry={() => queryClient.invalidateQueries(['servers'])}
@@ -139,8 +139,8 @@ const Dashboard = () => {
         <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-md mx-auto">
           Add CommunityClara to your Discord servers to start monitoring and managing your community safety.
         </p>
-        <a 
-          href="https://discord.com/api/oauth2/authorize?client_id=YOUR_BOT_ID&permissions=8&scope=bot"
+        <a
+          href="https://discord.com/oauth2/authorize?client_id=1399461751552213123&permissions=1099646233670&integration_type=0&scope=bot+applications.commands"
           target="_blank"
           rel="noopener noreferrer"
           className="btn bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700 shadow-lg hover:shadow-purple-500/25 transform hover:scale-105 transition-all duration-200"
@@ -178,7 +178,7 @@ const Dashboard = () => {
             </div>
           )}
         </div>
-        
+
         <div className="flex-shrink-0">
           <ServerSelector
             servers={serversData.servers}
@@ -207,7 +207,7 @@ const Dashboard = () => {
             </div>
           ) : dashboardError ? (
             <div className="min-h-[400px] flex items-center justify-center">
-              <ErrorMessage 
+              <ErrorMessage
                 title="Dashboard Error"
                 message={apiHelpers.formatError(dashboardError)}
                 onRetry={handleRefresh}
@@ -216,7 +216,7 @@ const Dashboard = () => {
           ) : dashboardData ? (
             <>
               {/* Stats Overview */}
-              <StatsOverview 
+              <StatsOverview
                 stats={dashboardData.server_stats}
                 serverId={selectedServerId}
               />
@@ -224,13 +224,13 @@ const Dashboard = () => {
               {/* Health Score and Analytics Row */}
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <div className="lg:col-span-1">
-                  <HealthScore 
+                  <HealthScore
                     healthData={dashboardData.health_score}
                     serverId={selectedServerId}
                   />
                 </div>
                 <div className="lg:col-span-2">
-                  <AnalyticsChart 
+                  <AnalyticsChart
                     analytics={dashboardData.recent_analytics}
                     violations={dashboardData.recent_violations}
                     serverId={selectedServerId}
@@ -239,7 +239,7 @@ const Dashboard = () => {
               </div>
 
               {/* Recent Violations */}
-              <ViolationsList 
+              <ViolationsList
                 violations={dashboardData.recent_violations}
                 serverId={selectedServerId}
                 onViolationUpdate={handleRefresh}
@@ -252,7 +252,7 @@ const Dashboard = () => {
                     <span className="mr-2">🐛</span>
                     Debug Information
                   </h4>
-                  
+
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <h5 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">Server Info:</h5>
@@ -264,7 +264,7 @@ const Dashboard = () => {
                         }, null, 2)}
                       </pre>
                     </div>
-                    
+
                     <div>
                       <h5 className="font-semibold text-gray-800 dark:text-gray-200 mb-2">Data Structure:</h5>
                       <pre className="text-xs text-gray-700 dark:text-gray-300 bg-gray-50 dark:bg-gray-900 p-3 rounded overflow-auto">
