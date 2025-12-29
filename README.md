@@ -2,72 +2,49 @@
 
 **Privacy-Preserving Discord Moderation with AI-Powered Content Analysis**
 
-[![Discord Bot](https://img.shields.io/badge/Discord-Bot-7289da?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/oauth2/authorize?client_id=YOUR_CLIENT_ID&permissions=1099511982080&integration_type=0&scope=bot)
-[![Python](https://img.shields.io/badge/Python-3.9+-3776ab?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+🌐 **Live Website:** [https://community-clara.vercel.app/](https://community-clara.vercel.app/)
+
+[![Discord Bot](https://img.shields.io/badge/Discord-Bot-7289da?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/oauth2/authorize?client_id=1399461751552213123&permissions=1099646233670&integration_type=0&scope=bot+applications.commands)
+[![Python](https://img.shields.io/badge/Python-3.11+-3776ab?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![React](https://img.shields.io/badge/React-18+-61dafb?style=for-the-badge&logo=react&logoColor=black)](https://reactjs.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com)
+[![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](LICENSE)
 
 ## 🌟 Features
 
 ### 🤖 AI-Powered Content Moderation
-- **OpenAI Moderation API Integration** - Real-time toxicity detection
-- **HuggingFace Transformers** - Advanced NLP analysis
-- **Multi-Category Detection**: NSFW, Toxicity, Harassment, Spam, Hate Speech, Threats, Self-Harm
-- **Configurable Sensitivity** - Adjust thresholds per server
+- **Advanced NLP Analysis** - Uses `toxic-bert` detection via Hugging Face Transformers.
+- **Multi-Category Detection**: Identifies NSFW, Toxicity, Harassment, Spam, Hate Speech, Threats, and Self-Harm.
+- **Configurable Sensitivity** - Adjust strictness thresholds (0.0 - 1.0) per server.
+- **Image Analysis** - Detects NSFW content in image attachments.
 
-### 🔒 Privacy-Preserving Architecture
-- **Local-First Processing** - Prioritizes local analysis where possible
-- **Threshold Auto-Adjustment** - Learn from community feedback
-- **Server-Specific Rules** - Adapts to server-specific communication patterns
-- **Anonymous Analytics** - Track trends without compromising privacy
+### 🔒 Privacy-First Architecture
+- **Data Minimization** - Stores only violation metadata, not full chat logs.
+- **Adaptive Learning** - Self-tunes thresholds based on false-positive feedback without retraining.
+- **Server-Specific Silos** - Each community has its own isolated configuration and rules.
 
 ### ⚡ Real-Time Discord Integration
-- **3-Warning System** - Progressive enforcement
-- **Smart Spam Detection** - Pattern-based analysis
-- **Automated Actions**: Message deletion, timeouts, escalation
-- **Human Moderation Alerts** - For complex cases
+- **3-Strike System** - Progressive enforcement: Warning → Final Warning → Action (Timeout/Ban).
+- **Smart Spam Detection** - Heuristic algorithm to catch rapid-fire spam and repetition.
+- **Automated Actions**: Auto-delete, Auto-timeout, and Auto-kick capabilities.
+- **Moderation Logs**: Detailed embed reports sent to designated admin channels.
 
 ### 📊 Comprehensive Analytics Dashboard
-- **Real-Time Metrics** - Community health scoring (0-100%)
-- **Violation Trends** - Daily/weekly statistics
-- **False Positive Tracking** - Accuracy measurement
-- **Engagement Analytics** - Community activity monitoring
-
+- **Live Health Score** - Real-time community safety metric (0-100%).
+- **Violation Trends** - Interactive charts showing toxicity patterns over time.
+- **Server Management** - update bot settings directly from the web interface.
 
 ## 📸 Screenshots
 
-### Landing Page
-The modern, responsive landing page showcasing SafeSpace AI's capabilities and features.
+| Dashboard Overview | Bot Configuration |
+|:---:|:---:|
+| ![Dashboard](screenshots/dashboard.png) | ![Settings](screenshots/settings.png) |
 
-![Landing Page](screenshots/landing-page.png)
-
-### Dashboard Overview
-Real-time analytics and server health monitoring with comprehensive violation tracking.
-
-![Dashboard](screenshots/dashboard.png)
-
-### Bot Configuration Settings
-Intuitive configuration interface for AI moderation thresholds and automated actions.
-
-![Settings](screenshots/settings.png)
-
-### User Profile Management
-User preferences and notification settings for personalized experience.
-
-![Profile](screenshots/profile.png)
-
-### Live Bot Testing - Content Moderation
-Demonstration of the bot detecting and handling toxic content in real-time.
-
-![Bot Content Moderation Test](screenshots/bot-test-screenshot.png)
-
-### Live Bot Testing - Spam Detection
-Advanced spam detection system identifying and removing repetitive content.
-
-![Bot Spam Detection Test](screenshots/bot-test-spam-screenshot.png)
+| Landing Page | Live Bot Action |
+|:---:|:---:|
+| ![Landing Page](screenshots/landing-page.png) | ![Bot Test](screenshots/bot-test-screenshot.png) |
 
 ---
-
 
 ## 🚀 Quick Start
 
@@ -75,17 +52,51 @@ Advanced spam detection system identifying and removing repetitive content.
 - Python 3.9+
 - Node.js 18+
 - Discord Bot Token
-- OpenAI API Key
+- Google OAuth Client ID (for dashboard login)
 
 ### 1. Clone & Setup
 ```bash
-git clone https://github.com/yourusername/CommunityClara.git
+git clone https://github.com/Tab-To-LightSpeed24/CommunityClara.git
 cd CommunityClara
 
 # Backend setup
 cd backend
-pip install -r requirements.txt
+python -m venv venv
+# Windows:
+venv\Scripts\activate
+# Mac/Linux:
+source venv/bin/activate
 
-# Frontend setup
+pip install -r requirements.txt
+```
+
+### 2. Frontend Setup
+```bash
 cd ../frontend
 npm install
+```
+
+### 3. Environment Variables
+Create a `.env` file in `backend/` with:
+```env
+DISCORD_BOT_TOKEN=your_token_here
+GOOGLE_CLIENT_ID=your_google_client_id
+SECRET_KEY=your_random_secret
+API_HOST=0.0.0.0
+API_PORT=8000
+```
+
+### 4. Run Application
+**Backend:**
+```bash
+# In backend folder
+python run_with_bot.py
+```
+
+**Frontend:**
+```bash
+# In frontend folder
+npm run dev
+```
+
+Visit `http://localhost:5173` to access the dashboard!
