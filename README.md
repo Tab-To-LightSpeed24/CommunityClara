@@ -2,7 +2,7 @@
 
 **Privacy-Preserving Discord Moderation with AI-Powered Content Analysis**
 
-🌐 **Live Website:** [https://community-clara.vercel.app/](https://community-clara.vercel.app/)
+🌐 **Live Website:** [https://community-clara.vercel.app/](https://community-clara.vercel.app/)  (temporarily unavailable due to hosting limits) 
 
 [![Discord Bot](https://img.shields.io/badge/Discord-Bot-7289da?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/oauth2/authorize?client_id=1399461751552213123&permissions=1099646233670&integration_type=0&scope=bot+applications.commands)
 [![Python](https://img.shields.io/badge/Python-3.11+-3776ab?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
