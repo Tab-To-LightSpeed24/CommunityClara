@@ -719,7 +719,7 @@ test
 
 4. **Deploy to Production:**
    - Use production database (PostgreSQL recommended)
-   - Set up proper hosting (Railway, Heroku, etc.)
+   - Set up proper hosting (Render, Heroku, etc.)
    - Configure environment variables
    - Enable HTTPS
 
